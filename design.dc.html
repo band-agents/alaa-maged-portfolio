@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--volt:#CCFF00;--red:#FF4538;--tick:46s}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#0A0A0B;color:#F2EFE8;-webkit-font-smoothing:antialiased}
+  a{color:var(--volt);text-decoration:none}
+  a:hover{color:#F2EFE8}
+  summary{list-style:none}
+  summary::-webkit-details-marker{display:none}
+  ::selection{background:var(--volt);color:#0A0A0B}
+  img{max-width:100%}
+  @keyframes am-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes am-pulse{0%,100%{opacity:1}50%{opacity:.25}}
+</style>
+</helmet>
+<div onClick="{{ onRootClick }}" style="position:relative;background:#0A0A0B;color:#F2EFE8;font-family:'Inter Tight',system-ui,sans-serif;overflow-x:hidden">
+
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(90deg,#232326 1px,transparent 1px),linear-gradient(0deg,#232326 1px,transparent 1px);background-size:140px 140px;opacity:.32;mask-image:radial-gradient(120% 80% at 50% 0%,#000 30%,transparent 100%);-webkit-mask-image:radial-gradient(120% 80% at 50% 0%,#000 30%,transparent 100%)"></div>
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>&quot;)"></div>
+
+  <div style="position:relative;z-index:2">
+
+    <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(18px,5vw,80px);border-bottom:1px solid #232326;background:rgba(10,10,11,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;color:#F2EFE8">
+        <span style="width:7px;height:7px;border-radius:50%;background:var(--volt);animation:am-pulse 2.4s ease-in-out infinite"></span>
+        <span style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.24em">A.M.M</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:clamp(14px,2.4vw,34px)">
+        <a href="#receipts" style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Receipts</a>
+        <a href="#brands" style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Brands</a>
+        <a href="#playbook" style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Playbook</a>
+        <a href="#contact" style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)">Contact</a>
+      </div>
+    </nav>
+
+    <header id="top" style="max-width:1480px;margin:0 auto;padding:clamp(48px,9vw,132px) clamp(20px,5vw,80px) clamp(36px,5vw,64px)">
+      <div style="display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:clamp(26px,4vw,48px)">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#7C7C84">Senior Media Buyer · Performance Marketing</span>
+        <span style="flex:1 1 60px;height:1px;background:#232326;min-width:24px"></span>
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#7C7C84">Cairo, Egypt</span>
+      </div>
+
+      <h1 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(46px,11.2vw,168px);line-height:.86;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance">Alaa Maged<br/>Mubarak</h1>
+
+      <div style="display:grid;gap:clamp(18px,2.6vw,30px);max-width:820px;margin-top:clamp(26px,4vw,52px)">
+        <p style="margin:0;font-family:'Anton',sans-serif;font-size:clamp(26px,4.4vw,58px);line-height:1.02;letter-spacing:-.01em;text-transform:uppercase">I don't run ads. <span style="color:var(--volt)">I run revenue.</span></p>
+        <p style="margin:0;font-size:clamp(15px,1.5vw,19px);line-height:1.55;color:#7C7C84;max-width:640px;text-wrap:pretty">Meta, Google, TikTok, Snapchat. Fashion, F&amp;B, auto, hospitality and app growth. The receipts are below.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:#232326;border:1px solid #232326;border-radius:14px;overflow:hidden;margin-top:clamp(40px,6vw,86px)">
+        <div style="background:#0A0A0B;padding:clamp(20px,2.4vw,30px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(38px,4.4vw,88px);line-height:.94;letter-spacing:-.01em;white-space:nowrap"><span data-countup="14">14</span><span style="color:var(--volt)">×</span></div>
+          <div style="margin-top:12px;font:500 11px/1.4 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#7C7C84">Peak ROAS</div>
+        </div>
+        <div style="background:#0A0A0B;padding:clamp(20px,2.4vw,30px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(38px,4.4vw,88px);line-height:.94;letter-spacing:-.01em;white-space:nowrap"><span style="font-size:.42em;vertical-align:.52em;color:#7C7C84;letter-spacing:.04em">EGP </span><span data-countup="27">27</span>M<span style="color:var(--volt)">+</span></div>
+          <div style="margin-top:12px;font:500 11px/1.4 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#7C7C84">Gross sales on the dashboards below</div>
+        </div>
+        <div style="background:#0A0A0B;padding:clamp(20px,2.4vw,30px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(38px,4.4vw,88px);line-height:.94;letter-spacing:-.01em;white-space:nowrap"><span data-countup="20000" data-comma="1">20,000</span><span style="color:var(--volt)">+</span></div>
+          <div style="margin-top:12px;font:500 11px/1.4 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#7C7C84">Orders</div>
+        </div>
+        <div style="background:#0A0A0B;padding:clamp(20px,2.4vw,30px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(38px,4.4vw,88px);line-height:.94;letter-spacing:-.01em;white-space:nowrap"><span style="color:var(--volt)">−</span><span data-countup="75">75</span>%</div>
+          <div style="margin-top:12px;font:500 11px/1.4 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#7C7C84">CAC cut, up to</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,3.4vw,44px)">
+        <a href="mailto:alaamubarak100@gmail.com" style="display:inline-flex;align-items:center;gap:10px;background:var(--volt);color:#0A0A0B;border-radius:999px;padding:16px 26px;font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase" style-hover="background:#F2EFE8;color:#0A0A0B">Hire Me</a>
+        <a href="#receipts" style="display:inline-flex;align-items:center;gap:10px;border:1px solid #232326;color:#F2EFE8;border-radius:999px;padding:16px 26px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase" style-hover="border-color:var(--volt);color:var(--volt)">See the Receipts ↓</a>
+      </div>
+    </header>
+
+    <section aria-label="Metrics ticker" style="border-top:1px solid #232326;border-bottom:1px solid #232326;background:#0E0E10;overflow:hidden;padding:16px 0">
+      <div style="display:flex;width:max-content;animation:am-marquee var(--tick) linear infinite">
+        <div style="display:flex;align-items:center;gap:36px;padding-right:36px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#F2EFE8;white-space:nowrap">
+          <span>Maile 14× ROAS <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>Capital Office 9.3× ROAS <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>Google Search 18× ROAS <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>Ashya EGP 260K → 1.4M/mo <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>CAC EGP 220 → 54 <span style="color:var(--volt)">▼</span></span>
+          <span style="color:#232326">/</span>
+          <span>TikTok CPI SAR 7 → 2 <span style="color:var(--volt)">▼</span></span>
+          <span style="color:#232326">/</span>
+          <span>Snap CPI $4.00 → $0.80 <span style="color:var(--volt)">▼</span></span>
+          <span style="color:#232326">/</span>
+          <span>TikTok sessions 4 → 39.6K <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>Gross sales +222% MoM <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+        </div>
+        <div aria-hidden="true" style="display:flex;align-items:center;gap:36px;padding-right:36px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#F2EFE8;white-space:nowrap">
+          <span>Maile 14× ROAS <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>Capital Office 9.3× ROAS <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>Google Search 18× ROAS <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>Ashya EGP 260K → 1.4M/mo <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>CAC EGP 220 → 54 <span style="color:var(--volt)">▼</span></span>
+          <span style="color:#232326">/</span>
+          <span>TikTok CPI SAR 7 → 2 <span style="color:var(--volt)">▼</span></span>
+          <span style="color:#232326">/</span>
+          <span>Snap CPI $4.00 → $0.80 <span style="color:var(--volt)">▼</span></span>
+          <span style="color:#232326">/</span>
+          <span>TikTok sessions 4 → 39.6K <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+          <span>Gross sales +222% MoM <span style="color:var(--volt)">▲</span></span>
+          <span style="color:#232326">/</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="receipts" style="max-width:1480px;margin:0 auto;padding:clamp(56px,9vw,130px) clamp(20px,5vw,80px)">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(20px,2.6vw,34px)">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--volt)">03</span>
+        <span style="flex:1;height:1px;background:#232326"></span>
+      </div>
+      <h2 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(34px,6.4vw,96px);line-height:.92;letter-spacing:-.015em;text-transform:uppercase">Receipts.<br/>Straight from Shopify.</h2>
+      <p style="margin:18px 0 0;font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">No mockups. Real store dashboards.</p>
+
+      <article data-reveal style="margin-top:clamp(36px,5vw,72px);border:1px solid #232326;border-radius:18px;background:#0E0E10;padding:clamp(20px,3vw,44px)">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 20px;padding-bottom:22px;border-bottom:1px solid #232326">
+          <span style="font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--volt)">Case File 01</span>
+          <h3 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,50px);line-height:1;letter-spacing:.01em;text-transform:uppercase">CUBS</h3>
+          <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:7px 11px">Egypt · EGP</span>
+          <span style="flex:1 1 40px"></span>
+          <p style="margin:0;font-size:clamp(15px,1.6vw,20px);color:#F2EFE8">“Zero to scale in 60 days.”</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(24px,3vw,48px);padding-top:clamp(24px,3vw,40px)">
+          <div style="display:grid;gap:clamp(24px,3vw,38px);align-content:start;min-width:0">
+            <div>
+              <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">August gross sales</div>
+              <div style="margin-top:14px;font-family:'Anton',sans-serif;font-size:clamp(44px,6.4vw,112px);line-height:.92;letter-spacing:-.015em;white-space:nowrap"><span style="font-size:.34em;vertical-align:.7em;color:#7C7C84;letter-spacing:.04em">EGP </span><span data-countup="5.52" data-dec="2">5.52</span>M</div>
+              <div style="margin-top:14px;display:inline-flex;align-items:center;gap:8px;font:700 13px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--volt)">▲ +222% MoM</div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:#232326;border:1px solid #232326;border-radius:12px;overflow:hidden">
+              <div style="background:#0E0E10;padding:16px">
+                <div style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1">4.95M</div>
+                <div style="margin-top:8px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Net sales <span style="color:var(--volt)">+197%</span></div>
+              </div>
+              <div style="background:#0E0E10;padding:16px">
+                <div style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1">2,144</div>
+                <div style="margin-top:8px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Orders <span style="color:var(--volt)">+127%</span></div>
+              </div>
+              <div style="background:#0E0E10;padding:16px">
+                <div style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1">2,124</div>
+                <div style="margin-top:8px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Fulfilled <span style="color:var(--volt)">+147%</span></div>
+              </div>
+              <div style="background:#0E0E10;padding:16px">
+                <div style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1">25.61%</div>
+                <div style="margin-top:8px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Returning <span style="color:var(--volt)">+18%</span></div>
+              </div>
+            </div>
+
+            <div>
+              <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Gross sales by month · EGP</div>
+              <div style="display:flex;align-items:flex-end;gap:clamp(14px,2vw,26px);height:196px;margin-top:20px;border-bottom:1px solid #232326;padding-bottom:0">
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;min-width:0">
+                  <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:#7C7C84">1.71M</div>
+                  <div style="height:56px;background:#2A2A2E;border-radius:4px 4px 0 0"></div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;min-width:0">
+                  <div style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--volt)">5.52M</div>
+                  <div style="height:152px;background:var(--volt);border-radius:4px 4px 0 0"></div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;min-width:0">
+                  <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:#F2EFE8">3.25M</div>
+                  <div style="height:90px;background:rgba(204,255,0,.42);border-radius:4px 4px 0 0"></div>
+                </div>
+              </div>
+              <div style="display:flex;gap:clamp(14px,2vw,26px);margin-top:10px">
+                <div style="flex:1;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;min-width:0">Jul</div>
+                <div style="flex:1;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;min-width:0">Aug</div>
+                <div style="flex:1;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;min-width:0">Sep 1–17</div>
+              </div>
+            </div>
+
+            <div style="border:1px solid #232326;border-radius:14px;padding:clamp(18px,2.4vw,28px);background:#121214">
+              <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">TikTok sessions · one month</div>
+              <div style="margin-top:16px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;font-family:'Anton',sans-serif;font-size:clamp(40px,5.6vw,78px);line-height:.9;letter-spacing:-.01em">
+                <span style="color:#7C7C84">4</span>
+                <span style="color:var(--volt);font-size:.7em">→</span>
+                <span style="color:var(--volt)">39.6K</span>
+              </div>
+              <div style="margin-top:16px;font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Shopify flagged it at +991,700%</div>
+            </div>
+          </div>
+
+          <div style="display:grid;gap:16px;align-content:start;min-width:0">
+            <div data-shot="evidence/cubs-jul.png" style="position:relative;cursor:zoom-in;border:1px solid #232326;border-radius:12px;overflow:hidden;background:#121214;transition:box-shadow .25s ease,border-color .25s ease" style-hover="border-color:var(--volt);box-shadow:0 0 30px rgba(204,255,0,.16)">
+              <img src="evidence/cubs-jul.png" alt="Shopify Analytics, July 1–31 2026: EGP 1,711,799 gross sales, 944 orders" style="display:block;width:100%;height:auto"/>
+              <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:12px 14px;border-top:1px solid #232326;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;background:#0E0E10">
+                <span>Jul 1–31, 2026</span>
+                <span style="color:#F2EFE8">EGP 1.71M gross · 944 orders</span>
+              </div>
+            </div>
+            <div data-shot="evidence/cubs-aug-vs-jul.png" style="position:relative;cursor:zoom-in;border:1px solid #232326;border-radius:12px;overflow:hidden;background:#121214;transition:box-shadow .25s ease,border-color .25s ease" style-hover="border-color:var(--volt);box-shadow:0 0 30px rgba(204,255,0,.16)">
+              <img src="evidence/cubs-aug-vs-jul.png" alt="Shopify Analytics, August vs July 2026: EGP 5,519,262 gross sales, +222%" style="display:block;width:100%;height:auto"/>
+              <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:12px 14px;border-top:1px solid #232326;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;background:#0E0E10">
+                <span>Aug vs Jul, 2026</span>
+                <span style="color:var(--volt)">EGP 5.52M gross · ▲ +222%</span>
+              </div>
+            </div>
+            <div data-shot="evidence/cubs-sep-mtd.png" style="position:relative;cursor:zoom-in;border:1px solid #232326;border-radius:12px;overflow:hidden;background:#121214;transition:box-shadow .25s ease,border-color .25s ease" style-hover="border-color:var(--volt);box-shadow:0 0 30px rgba(204,255,0,.16)">
+              <img src="evidence/cubs-sep-mtd.png" alt="Shopify Analytics, September 1–17 2026: EGP 3,248,825 gross sales, 1,385 orders" style="display:block;width:100%;height:auto"/>
+              <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:12px 14px;border-top:1px solid #232326;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;background:#0E0E10">
+                <span>Sep 1–17, 2026 · MTD</span>
+                <span style="color:#F2EFE8">EGP 3.25M gross · 1,385 orders</span>
+              </div>
+            </div>
+            <div style="font:500 10px/1.5 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Click any dashboard to open full size</div>
+          </div>
+        </div>
+      </article>
+
+      <article data-reveal style="margin-top:clamp(20px,2.6vw,34px);border:1px solid #232326;border-radius:18px;background:#0E0E10;padding:clamp(20px,3vw,44px)">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 20px;padding-bottom:22px;border-bottom:1px solid #232326">
+          <span style="font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--volt)">Case File 02</span>
+          <h3 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,50px);line-height:1;letter-spacing:.01em;text-transform:uppercase;color:#7C7C84;border-bottom:2px dashed #232326">Store name</h3>
+          <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:7px 11px">Egypt · EGP</span>
+          <span style="flex:1 1 40px"></span>
+          <p style="margin:0;font-size:clamp(15px,1.6vw,20px);color:#F2EFE8">“Eight-figure volume in two months. Half the buyers come back.”</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(24px,3vw,48px);padding-top:clamp(24px,3vw,40px)">
+          <div style="display:grid;gap:clamp(24px,3vw,38px);align-content:start;min-width:0">
+            <div>
+              <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Net sales · two months</div>
+              <div style="margin-top:14px;font-family:'Anton',sans-serif;font-size:clamp(44px,6.4vw,112px);line-height:.92;letter-spacing:-.015em;white-space:nowrap"><span style="font-size:.34em;vertical-align:.7em;color:#7C7C84;letter-spacing:.04em">EGP </span><span data-countup="9.73" data-dec="2">9.73</span>M</div>
+              <div style="margin-top:14px;font:500 12px/1.5 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">From EGP 16.75M gross · 10,630 orders</div>
+            </div>
+
+            <div>
+              <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Returning customer rate</div>
+              <div style="margin-top:14px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;font-family:'Anton',sans-serif;font-size:clamp(40px,5.6vw,78px);line-height:.9">
+                <span style="color:#7C7C84">47.59%</span>
+                <span style="color:var(--volt);font-size:.7em">→</span>
+                <span style="color:var(--volt)">50.22%</span>
+              </div>
+              <div style="margin-top:14px;font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">May → July. Retention says the funnel works.</div>
+            </div>
+
+            <div style="border:1px solid #232326;border-radius:12px;overflow:hidden">
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1px;background:#232326">
+                <div style="background:#121214;padding:12px 14px;font:500 10px/1.3 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Metric</div>
+                <div style="background:#121214;padding:12px 14px;font:500 10px/1.3 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#F2EFE8">May</div>
+                <div style="background:#121214;padding:12px 14px;font:500 10px/1.3 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#F2EFE8">Jul</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em;color:#7C7C84">Gross</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em">8.85M</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em">7.91M</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em;color:#7C7C84">Net</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:700 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--volt)">5.44M</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:700 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--volt)">4.29M</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em;color:#7C7C84">Orders</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em">5,470</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em">5,160</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em;color:#7C7C84">Returning</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em">47.59%</div>
+                <div style="background:#0E0E10;padding:12px 14px;font:500 11px/1.3 'JetBrains Mono',monospace;letter-spacing:.06em">50.22%</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;gap:16px;align-content:start;min-width:0">
+            <div data-shot="evidence/eg-may.png" style="position:relative;cursor:zoom-in;border:1px solid #232326;border-radius:12px;overflow:hidden;background:#121214;transition:box-shadow .25s ease,border-color .25s ease" style-hover="border-color:var(--volt);box-shadow:0 0 30px rgba(204,255,0,.16)">
+              <img src="evidence/eg-may.png" alt="Shopify Analytics, May 1–31 2026: EGP 8,845,221.20 gross sales, 5,470 orders, 47.59% returning" style="display:block;width:100%;height:auto"/>
+              <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:12px 14px;border-top:1px solid #232326;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;background:#0E0E10">
+                <span>May 1–31, 2026</span>
+                <span style="color:#F2EFE8">EGP 5.44M net · 47.59% returning</span>
+              </div>
+            </div>
+            <div data-shot="evidence/eg-jul.png" style="position:relative;cursor:zoom-in;border:1px solid #232326;border-radius:12px;overflow:hidden;background:#121214;transition:box-shadow .25s ease,border-color .25s ease" style-hover="border-color:var(--volt);box-shadow:0 0 30px rgba(204,255,0,.16)">
+              <img src="evidence/eg-jul.png" alt="Shopify Analytics, July 1–31 2026: EGP 7,905,391.40 gross sales, 5,160 orders, 50.22% returning" style="display:block;width:100%;height:auto"/>
+              <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:12px 14px;border-top:1px solid #232326;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;background:#0E0E10">
+                <span>Jul 1–31, 2026</span>
+                <span style="color:var(--volt)">EGP 4.29M net · 50.22% returning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article data-reveal style="margin-top:clamp(20px,2.6vw,34px);border:1px solid #232326;border-radius:18px;background:#0E0E10;padding:clamp(20px,3vw,44px)">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 20px;padding-bottom:22px;border-bottom:1px solid #232326">
+          <span style="font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--volt)">Case File 03</span>
+          <h3 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,50px);line-height:1;letter-spacing:.01em;text-transform:uppercase;color:#7C7C84;border-bottom:2px dashed #232326">EU store name</h3>
+          <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:7px 11px">Europe · PLN</span>
+          <span style="flex:1 1 40px"></span>
+          <p style="margin:0;font-size:clamp(15px,1.6vw,20px);color:#F2EFE8">“Cross-border, in złoty.”</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(24px,3vw,48px);padding-top:clamp(24px,3vw,40px)">
+          <div style="display:grid;gap:clamp(24px,3vw,38px);align-content:start;min-width:0">
+            <div>
+              <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Gross sales · two months</div>
+              <div style="margin-top:14px;font-family:'Anton',sans-serif;font-size:clamp(44px,6.4vw,112px);line-height:.92;letter-spacing:-.015em;white-space:nowrap"><span style="font-size:.34em;vertical-align:.7em;color:#7C7C84;letter-spacing:.04em">PLN </span><span data-countup="2.37" data-dec="2">2.37</span>M</div>
+              <div style="margin-top:14px;font:500 12px/1.5 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">5,124 orders · Jul + Aug 2026</div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:#232326;border:1px solid #232326;border-radius:12px;overflow:hidden">
+              <div style="background:#0E0E10;padding:16px">
+                <div style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1">443.45</div>
+                <div style="margin-top:8px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Jul AOV · PLN</div>
+              </div>
+              <div style="background:#0E0E10;padding:16px">
+                <div style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1;color:var(--volt)">445.79</div>
+                <div style="margin-top:8px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Aug AOV · PLN</div>
+              </div>
+              <div style="background:#0E0E10;padding:16px">
+                <div style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1">34.94%</div>
+                <div style="margin-top:8px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Jul returning</div>
+              </div>
+              <div style="background:#0E0E10;padding:16px">
+                <div style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.6vw,34px);line-height:1;color:var(--volt)">36.61%</div>
+                <div style="margin-top:8px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Aug returning</div>
+              </div>
+            </div>
+
+            <div style="display:grid;gap:10px">
+              <div style="display:flex;justify-content:space-between;gap:16px;padding-bottom:10px;border-bottom:1px solid #232326;font:500 11px/1.4 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#7C7C84"><span>Jul 1–31</span><span style="color:#F2EFE8">PLN 1.24M · 2,689 orders</span></div>
+              <div style="display:flex;justify-content:space-between;gap:16px;font:500 11px/1.4 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#7C7C84"><span>Aug 1–31</span><span style="color:#F2EFE8">PLN 1.13M · 2,435 orders</span></div>
+            </div>
+          </div>
+
+          <div style="display:grid;gap:16px;align-content:start;min-width:0">
+            <div data-shot="evidence/eu-jul-pln.png" style="position:relative;cursor:zoom-in;border:1px solid #232326;border-radius:12px;overflow:hidden;background:#121214;transition:box-shadow .25s ease,border-color .25s ease" style-hover="border-color:var(--volt);box-shadow:0 0 30px rgba(204,255,0,.16)">
+              <img src="evidence/eu-jul-pln.png" alt="Shopify Analytics, July 1–31 2026: PLN 1,238,836.85 gross sales, 2,689 orders, AOV PLN 443.45" style="display:block;width:100%;height:auto"/>
+              <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:12px 14px;border-top:1px solid #232326;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;background:#0E0E10">
+                <span>Jul 1–31, 2026</span>
+                <span style="color:#F2EFE8">PLN 1.24M gross · AOV 443.45</span>
+              </div>
+            </div>
+            <div data-shot="evidence/eu-aug-pln.png" style="position:relative;cursor:zoom-in;border:1px solid #232326;border-radius:12px;overflow:hidden;background:#121214;transition:box-shadow .25s ease,border-color .25s ease" style-hover="border-color:var(--volt);box-shadow:0 0 30px rgba(204,255,0,.16)">
+              <img src="evidence/eu-aug-pln.png" alt="Shopify Analytics, August 1–31 2026: PLN 1,133,744.12 gross sales, 2,435 orders, AOV PLN 445.79" style="display:block;width:100%;height:auto"/>
+              <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:12px 14px;border-top:1px solid #232326;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;background:#0E0E10">
+                <span>Aug 1–31, 2026</span>
+                <span style="color:var(--volt)">PLN 1.13M gross · 36.61% returning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="brands" style="max-width:1480px;margin:0 auto;padding:clamp(56px,9vw,130px) clamp(20px,5vw,80px)">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(20px,2.6vw,34px)">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--volt)">04</span>
+        <span style="flex:1;height:1px;background:#232326"></span>
+      </div>
+      <h2 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(34px,6.4vw,96px);line-height:.92;letter-spacing:-.015em;text-transform:uppercase">Brands I've scaled</h2>
+      <p style="margin:18px 0 0;font:500 12px/1.6 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">Tap a card for the play</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:clamp(30px,4vw,56px)">
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">Maile</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Women's fashion</div>
+            <div style="font-family:'Anton',sans-serif;font-size:clamp(46px,4.6vw,68px);line-height:.92;color:var(--volt)">14×</div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">Peak-month ROAS · EGP 95K/mo</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Hook-led video 3.4× ROAS vs static</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">CPM EGP 119</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Launch week 4× baseline revenue</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">Advantage+ Shopping + 1% lookalike of top 200 buyers; 5–7 variants/week, winners scaled 5× within 48h.</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">Capital Office Furniture</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">B2B/B2C furniture</div>
+            <div style="font-family:'Anton',sans-serif;font-size:clamp(46px,4.6vw,68px);line-height:.92;color:var(--volt)">9.3×</div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">ROAS</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Google Search 18× ROAS</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">CPL EGP 38 vs EGP 68 benchmark</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">−44% cost per qualified corporate lead</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">Search for in-market buyers + Meta catalog retargeting for showroom visitors; competitor conquest at 60% lower CPC.</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">Ashya Egypt</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Women's fashion</div>
+            <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-family:'Anton',sans-serif;font-size:clamp(30px,3vw,44px);line-height:.96"><span style="color:#7C7C84">260K</span><span style="color:var(--volt)">→</span><span style="color:var(--volt)">1.4M</span></div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">EGP monthly revenue</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">7× blended ROAS</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">CAC <span style="color:var(--red)">EGP 220</span> → <span style="color:var(--volt)">EGP 54</span></div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">33% repeat purchase · Google Shopping = 18% of revenue</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">5-stage Meta ladder; Advantage+ beat manual CBO by 31%, so 60% of budget moved.</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">Havva Dose</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Women's fashion</div>
+            <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-family:'Anton',sans-serif;font-size:clamp(30px,3vw,44px);line-height:.96"><span style="color:#7C7C84">450K</span><span style="color:var(--volt)">→</span><span style="color:var(--volt)">1.2M</span></div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">EGP per month · spend or revenue, to confirm</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">CAC <span style="color:var(--red)">EGP 180</span> → <span style="color:var(--volt)">EGP 71</span></div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Hook rate 38%+ vs category avg 22–25%</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">+34% 90-day LTV · peak ROAS 7×</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">6–8 creatives/week. Losers cut at 72h. Winners scaled at 96h.</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">Unstmpd</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Women's formal wear</div>
+            <div style="font-family:'Anton',sans-serif;font-size:clamp(46px,4.6vw,68px);line-height:.92;color:var(--volt)">7.4×</div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">ROAS in 90 days</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Repeat purchase 8% → <span style="color:var(--volt)">21%</span></div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">UGC dark posts 3.1× CTR vs studio</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Advantage+ +23% ROAS vs manual</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">TOF video → MOF engagement → BOF dynamic catalog with urgency overlays; creative refresh every 20 days.</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">Oshoplin</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Multi-brand fashion</div>
+            <div style="font-family:'Anton',sans-serif;font-size:clamp(46px,4.6vw,68px);line-height:.92;color:var(--volt)">8×</div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">Blended ROAS</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">ROAS 6.1× → 8× in 3 months · $6K+/mo on Meta</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">+31% brand-level ROAS attribution (CPAS)</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">+44% CTR from dynamic pricing signals</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">Weekly top-20 SKU report; 40% of budget concentrated on winners.</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">1Pass</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">KSA</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Sports &amp; wellness app</div>
+            <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-family:'Anton',sans-serif;font-size:clamp(34px,3.4vw,50px);line-height:.96"><span style="color:#7C7C84">SAR 7</span><span style="color:var(--volt)">→</span><span style="color:var(--volt)">2</span></div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">TikTok CPI</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Snapchat CPI <span style="color:var(--red)">$4.00</span> → <span style="color:var(--volt)">$0.80</span></div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">41% trial-to-paid · 22% avg MoM subscriber growth</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">28% reactivation of non-activators</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">Location targeting near partner facilities (2.4× CTR).</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">El Safwa Resort</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Hospitality</div>
+            <div style="font-family:'Anton',sans-serif;font-size:clamp(42px,4.2vw,62px);line-height:.92;color:var(--volt)">3,200<span style="font-size:.7em">+</span></div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">Qualified leads in 6 months</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">CPL EGP 40 · 38% under sector benchmark</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">19% lead-to-booking · −55% wasted sales effort</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">2.8M+ impressions at EGP 0.04 CPV</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">Reels → traffic → qualifying instant forms → time-sensitive retargeting.</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">Handler Auto Service</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Automotive</div>
+            <div style="font-family:'Anton',sans-serif;font-size:clamp(46px,4.6vw,68px);line-height:.92;color:var(--volt)">3.2×</div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">Qualified bookings over 18 months</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">CPL EGP 30 via Click-to-WhatsApp</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Google Local = 35% of leads</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">Seasonal campaigns +40% vs evergreen</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">Meta geo-fenced to 8–12 km of the service center.</p>
+          </div>
+        </details>
+
+        <details data-reveal style="background:#121214;border:1px solid #232326;border-radius:14px;padding:clamp(20px,2.2vw,28px)">
+          <summary style="cursor:pointer;display:grid;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.04;text-transform:uppercase">AM:PM Coffee × The Turkish Street</span>
+              <span style="font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:#7C7C84;border:1px solid #232326;border-radius:999px;padding:6px 9px;white-space:nowrap">EG</span>
+            </div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">F&amp;B</div>
+            <div style="font-family:'Anton',sans-serif;font-size:clamp(46px,4.6vw,68px);line-height:.92;color:var(--volt)">+40%</div>
+            <div style="font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#7C7C84">Branch visits</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">The play <span style="color:var(--volt)">+</span></div>
+          </summary>
+          <div style="margin-top:18px;border-top:1px solid #232326;padding-top:18px;display:grid;gap:12px">
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">+22% delivery orders (Talabat + Elmenus + Meta retargeting)</div>
+            <div style="font:500 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.06em;color:#F2EFE8">3M+ weekly impressions</div>
+            <p style="margin:6px 0 0;font-size:14px;line-height:1.6;color:#7C7C84;text-wrap:pretty">3–6 km geo per branch; dedicated Ramadan, summer and Eid creative calendars.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <section id="playbook" style="max-width:1480px;margin:0 auto;padding:clamp(56px,9vw,130px) clamp(20px,5vw,80px)">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(20px,2.6vw,34px)">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--volt)">05</span>
+        <span style="flex:1;height:1px;background:#232326"></span>
+      </div>
+      <h2 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(34px,6.4vw,96px);line-height:.92;letter-spacing:-.015em;text-transform:uppercase">How the money moves</h2>
+
+      <div style="display:grid;gap:1px;background:#232326;border:1px solid #232326;border-radius:16px;overflow:hidden;margin-top:clamp(30px,4vw,56px)">
+        <div data-reveal style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:start;background:#0E0E10;padding:clamp(22px,3vw,38px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(36px,4vw,62px);line-height:.9;color:#232326">01</div>
+          <div style="min-width:0">
+            <div style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)">Architecture</div>
+            <p style="margin:12px 0 0;font-size:clamp(16px,1.7vw,22px);line-height:1.45;color:#F2EFE8;text-wrap:pretty">5-stage ladder. Video → engagement → catalog → checkout abandon → loyalty.</p>
+          </div>
+        </div>
+        <div data-reveal style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:start;background:#0E0E10;padding:clamp(22px,3vw,38px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(36px,4vw,62px);line-height:.9;color:#232326">02</div>
+          <div style="min-width:0">
+            <div style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)">Creative velocity</div>
+            <p style="margin:12px 0 0;font-size:clamp(16px,1.7vw,22px);line-height:1.45;color:#F2EFE8;text-wrap:pretty">6–8 new creatives a week. Cut at 72h. Scale at 96h.</p>
+          </div>
+        </div>
+        <div data-reveal style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:start;background:#0E0E10;padding:clamp(22px,3vw,38px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(36px,4vw,62px);line-height:.9;color:#232326">03</div>
+          <div style="min-width:0">
+            <div style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)">Audience engineering</div>
+            <p style="margin:12px 0 0;font-size:clamp(16px,1.7vw,22px);line-height:1.45;color:#F2EFE8;text-wrap:pretty">1% lookalikes seeded from top buyers. Geo-fences down to 3 km.</p>
+          </div>
+        </div>
+        <div data-reveal style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:start;background:#0E0E10;padding:clamp(22px,3vw,38px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(36px,4vw,62px);line-height:.9;color:#232326">04</div>
+          <div style="min-width:0">
+            <div style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)">Launch framework</div>
+            <p style="margin:12px 0 0;font-size:clamp(16px,1.7vw,22px);line-height:1.45;color:#F2EFE8;text-wrap:pretty">48h countdown → launch-day surge → lookalike expansion. 4× first-week revenue.</p>
+          </div>
+        </div>
+        <div data-reveal style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:start;background:#0E0E10;padding:clamp(22px,3vw,38px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(36px,4vw,62px);line-height:.9;color:#232326">05</div>
+          <div style="min-width:0">
+            <div style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)">Retention</div>
+            <p style="margin:12px 0 0;font-size:clamp(16px,1.7vw,22px);line-height:1.45;color:#F2EFE8;text-wrap:pretty">Post-purchase D3 cross-sell → D14 new arrivals → D45 loyalty. +34% 90-day LTV.</p>
+          </div>
+        </div>
+        <div data-reveal style="display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:start;background:#0E0E10;padding:clamp(22px,3vw,38px)">
+          <div style="font-family:'Anton',sans-serif;font-size:clamp(36px,4vw,62px);line-height:.9;color:#232326">06</div>
+          <div style="min-width:0">
+            <div style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)">Measurement</div>
+            <p style="margin:12px 0 0;font-size:clamp(16px,1.7vw,22px);line-height:1.45;color:#F2EFE8;text-wrap:pretty">Pixel + server-side CAPI, GTM, GA4, UTM architecture, AppsFlyer/Adjust.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Arsenal" style="max-width:1480px;margin:0 auto;padding:clamp(56px,9vw,130px) clamp(20px,5vw,80px)">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(20px,2.6vw,34px)">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--volt)">06</span>
+        <span style="flex:1;height:1px;background:#232326"></span>
+      </div>
+      <h2 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(34px,6.4vw,96px);line-height:.92;letter-spacing:-.015em;text-transform:uppercase">Arsenal</h2>
+
+      <div style="display:grid;gap:clamp(24px,3vw,40px);margin-top:clamp(30px,4vw,56px)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,44px)">
+          <div>
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Platforms</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">Meta (ASC, CPAS)</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">Google Ads (Search, Shopping, PMax, UAC)</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">TikTok</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">Snapchat</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">LinkedIn</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">X</span>
+            </div>
+          </div>
+          <div>
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Stack</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">GA4</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">Meta Pixel + CAPI</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">GTM</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">AppsFlyer</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">Adjust</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">Looker Studio</span>
+              <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;border:1px solid #232326;border-radius:999px;padding:9px 13px">Power BI</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #232326;padding-top:clamp(20px,3vw,34px)">
+          <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Metrics wall</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:16px;font:400 12px/1 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84">
+            <span>ROAS</span><span style="color:#232326">·</span><span>MER</span><span style="color:#232326">·</span><span>nCAC</span><span style="color:#232326">·</span><span>AOV</span><span style="color:#232326">·</span><span>LTV</span><span style="color:#232326">·</span><span>CPI</span><span style="color:#232326">·</span><span>CPL</span><span style="color:#232326">·</span><span>CPA</span><span style="color:#232326">·</span><span>Hook Rate</span><span style="color:#232326">·</span><span>Hold Rate</span><span style="color:#232326">·</span><span>Thumb-Stop</span><span style="color:#232326">·</span><span>Creative Decay</span><span style="color:#232326">·</span><span>D1/D7/D30</span><span style="color:#232326">·</span><span>Trial-to-Paid</span>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(20px,3vw,44px);border-top:1px solid #232326;padding-top:clamp(20px,3vw,34px)">
+          <div>
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Verticals</div>
+            <p style="margin:14px 0 0;font:500 12px/1.8 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase">Fashion · F&amp;B · Automotive · Hospitality · B2B · App Growth</p>
+          </div>
+          <div>
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Markets</div>
+            <p style="margin:14px 0 0;font:500 12px/1.8 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase">Egypt · Saudi Arabia · Europe</p>
+          </div>
+          <div>
+            <div style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Languages</div>
+            <p style="margin:14px 0 0;font:500 12px/1.8 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase">Arabic (native) · English (professional)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="border-top:1px solid #232326;background:#0E0E10">
+      <div style="max-width:1480px;margin:0 auto;padding:clamp(56px,9vw,140px) clamp(20px,5vw,80px)">
+        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(20px,2.6vw,34px)">
+          <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--volt)">07</span>
+          <span style="flex:1;height:1px;background:#232326"></span>
+        </div>
+        <h2 style="margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(36px,7.4vw,118px);line-height:.9;letter-spacing:-.02em;text-transform:uppercase;max-width:15ch">Give me the budget. I'll bring the <span style="color:var(--volt)">receipts</span>.</h2>
+        <p style="margin:clamp(22px,3vw,34px) 0 0;font:500 12px/1.7 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7C7C84;max-width:60ch">Every ROAS figure, every CPL, every scale story here is real.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(30px,4vw,50px)">
+          <a href="mailto:alaamubarak100@gmail.com" style="display:inline-flex;align-items:center;gap:10px;background:var(--volt);color:#0A0A0B;border-radius:999px;padding:17px 27px;font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase" style-hover="background:#F2EFE8">alaamubarak100@gmail.com</a>
+          <a href="https://wa.me/201001047657" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;border:1px solid #232326;color:#F2EFE8;border-radius:999px;padding:17px 27px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase" style-hover="border-color:var(--volt);color:var(--volt)">+20 100 104 7657</a>
+          <a href="Alaa_Maged_Mubarak_CV.pdf" download="Alaa_Maged_Mubarak_CV.pdf" style="display:inline-flex;align-items:center;gap:10px;border:1px solid #232326;color:#F2EFE8;border-radius:999px;padding:17px 27px;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase" style-hover="border-color:var(--volt);color:var(--volt)">Download CV ↓</a>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:clamp(50px,8vw,110px);padding-top:22px;border-top:1px solid #232326;font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">
+          <span>Cairo, Egypt</span>
+          <span>© 2026 Alaa Maged Mubarak</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <sc-if value="{{ hasShot }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeShot }}" style="position:fixed;inset:0;z-index:100;background:rgba(6,6,7,.94);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:clamp(14px,3vw,44px);cursor:zoom-out">
+      <div style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1500px;gap:16px">
+        <span style="font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#7C7C84">Evidence · unretouched Shopify dashboard</span>
+        <span style="font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--volt)">Close ✕</span>
+      </div>
+      <img src="{{ shot }}" alt="Full-size Shopify analytics dashboard" style="max-width:100%;max-height:82vh;object-fit:contain;border:1px solid #232326;border-radius:12px;background:#121214"/>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#CCFF00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#CCFF00&quot;,&quot;#FF6A00&quot;,&quot;#00E5FF&quot;,&quot;#F2EFE8&quot;],&quot;section&quot;:&quot;Look&quot;},&quot;tickerSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:46,&quot;min&quot;:18,&quot;max&quot;:90,&quot;step&quot;:2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;animateNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { shot: null };
+
+  componentDidMount() {
+    const root = document.documentElement;
+    if (this.props.accent) root.style.setProperty('--volt', this.props.accent);
+    if (this.props.tickerSeconds) root.style.setProperty('--tick', this.props.tickerSeconds + 's');
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const animate = this.props.animateNumbers !== false && !reduce;
+
+    if (animate) {
+      this.countIO = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { this.countIO.unobserve(e.target); this.runCount(e.target); }
+        });
+      }, { threshold: 0.35 });
+      document.querySelectorAll('[data-countup]').forEach((el) => this.countIO.observe(el));
+    }
+
+    if (!reduce) {
+      this.revealIO = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            this.revealIO.unobserve(e.target);
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+        el.style.transition = 'opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1)';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(22px)';
+        this.revealIO.observe(el);
+      });
+    }
+
+    this.onKey = (e) => { if (e.key === 'Escape') this.setState({ shot: null }); };
+    document.addEventListener('keydown', this.onKey);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.onKey);
+    if (this.countIO) this.countIO.disconnect();
+    if (this.revealIO) this.revealIO.disconnect();
+  }
+
+  runCount(el) {
+    const target = parseFloat(el.dataset.countup);
+    if (!isFinite(target)) return;
+    const dec = parseInt(el.dataset.dec || '0', 10);
+    const comma = el.dataset.comma === '1';
+    const t0 = performance.now();
+    const dur = 1500;
+    const fmt = (v) => v.toLocaleString('en-US', {
+      minimumFractionDigits: dec,
+      maximumFractionDigits: dec,
+      useGrouping: comma
+    });
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 4);
+      el.textContent = fmt(target * eased);
+      if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(target);
+    };
+    el.textContent = fmt(0);
+    requestAnimationFrame(step);
+  }
+
+  renderVals() {
+    return {
+      shot: this.state.shot,
+      hasShot: !!this.state.shot,
+      closeShot: () => this.setState({ shot: null }),
+      onRootClick: (e) => {
+        const frame = e.target.closest && e.target.closest('[data-shot]');
+        if (frame) this.setState({ shot: frame.dataset.shot });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
